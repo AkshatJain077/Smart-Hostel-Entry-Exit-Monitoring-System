@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Inspection</title>
+</head>
+<body>
+
+<h2>Rooms Visited (BFS Order)</h2>
+<ul>
+    {% for room in rooms %}
+        <li>Room {{ room }}</li>
+    {% endfor %}
+</ul>
+
+<h2>Violators Found</h2>
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Room</th>
+    </tr>
+
+    {% for student in students %}
+    <tr>
+        <td>{{ student[0] }}</td>
+        <td>{{ student[1] }}</td>
+        <td>{{ student[2] }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+<br>
+<a href="/">Go Home</a>
+
+</body>
+</html>

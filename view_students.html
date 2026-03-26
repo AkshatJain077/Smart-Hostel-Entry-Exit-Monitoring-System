@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Students</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="navbar">
+    <a href="/">Home</a>
+    <a href="/add">Add Student</a>
+    <a href="/update">Entry/Exit</a>
+    <a href="/violators">Violators</a>
+    <a href="/inspect">Inspection</a>
+</div>
+
+<div class="container">
+    <h2>Student List</h2>
+
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Room</th>
+            <th>Status</th>
+            <th>Fine</th>
+            <th>Action</th>
+        </tr>
+
+        {% for student in students %}
+        <tr>
+            <td>{{ student[0] }}</td>
+            <td>{{ student[1] }}</td>
+            <td>{{ student[2] }}</td>
+            <td>
+                {% if student[3] == 1 %}
+                    Inside
+                {% else %}
+                    Outside
+                {% endif %}
+            </td>
+            <td>₹{{ student[6] }}</td>
+            <td>
+                <a class="button" href="/clear_fine/{{ student[0] }}">Clear</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+
+</body>
+</html>

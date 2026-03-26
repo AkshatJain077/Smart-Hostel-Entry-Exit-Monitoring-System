@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="navbar">
+    <a href="/">Home</a>
+    <a href="/add">Add Student</a>
+    <a href="/view">View Students</a>
+    <a href="/update">Entry/Exit</a>
+    <a href="/violators">Violators</a>
+    <a href="/inspect">Inspection</a>
+</div>
+
+<div class="container">
+    <h2>Dashboard 📊</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>Total Students</h3>
+            <p>{{ total }}</p>
+        </div>
+
+        <div class="card">
+            <h3>Inside Hostel</h3>
+            <p>{{ inside }}</p>
+        </div>
+
+        <div class="card">
+            <h3>Outside Hostel</h3>
+            <p>{{ outside }}</p>
+        </div>
+
+        <div class="card">
+            <h3>Total Fine</h3>
+            <p>₹{{ total_fine }}</p>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>
